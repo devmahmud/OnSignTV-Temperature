@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-md-12">
+    <div class="card mt-3">
+        <div class="card-header">
+          Find Temperature For Location
+        </div>
+        <div class="card-body">
+            <form method="POST" action="{% url 'home' %}">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col">
+                    <label for="latitude">Latitude</label>
+                    <input type="text" class="form-control" name="latitude" value="{{ latitude }}" required>
+                    <small class="text-muted">
+                        Enter a Latitude for a location
+                    </small>
+                  </div>
+                  <div class="col">
+                        <label for="latitude">Longitude</label>
+                        <input type="text" class="form-control" name="longitude" value="{{ longitude }}" required>
+                        <small class="text-muted">
+                            Enter a Longitude for a location
+                        </small>
+                      </div>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Show Temperature</button>
+              </form>
+        </div>
+      </div>
+      <div class="card mt-3">
+            <div class="card-body">
+              {% if temp %}
+              Temperature For {{ latitude }}, {{ longitude }} is currently <strong style="font-size: 25px">{{ temp }}&deg; C</strong>
+              {% endif %}
+            </div>
+        </div>
+</div>
+{% endblock content %}
+    
