@@ -21,6 +21,7 @@ get your api key from here:  https://darksky.net/dev
 ```
 
 # Project Snapshot
+![image](https://user-images.githubusercontent.com/19981097/65222736-85468980-dae1-11e9-996d-d5fa94967601.png)
 
 ## Author
 
